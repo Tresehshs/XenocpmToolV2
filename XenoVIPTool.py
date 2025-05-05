@@ -829,7 +829,7 @@ if __name__ == "__main__":
             elif service == 39:  # Unlock Toyota Crown
                 print(Colorate.Horizontal(Colors.red_to_yellow, '[!] NOTE: THIS FUNCTION TAKES A WHILE TO COMPLETE, PLEASE DON\'T CANCEL'))
                 print(Colorate.Horizontal(Colors.red_to_yellow, '[%] UNLOCKING TOYOTA CROWN'))
-               if cpm.unlock_crown():
+                if cpm.unlock_crown():
                    print(Colorate.Horizontal(Colors.green_to_white, 'SUCCESSFUL (✔)'))
                    print(Colorate.Horizontal(Colors.green_to_white, '======================================'))
                    answ = Prompt.ask("[bold][?] DO YOU WANT TO EXIT[/bold]?", choices=["y", "n"], default="n")
