@@ -151,7 +151,7 @@ if __name__ == "__main__":
             "[bold][?] Access Key[/bold]", "Access Key", password=False
         )
         console.print("[bold red][%] Trying to Login[/bold red]: ", end=None)
-        cpm = OfficialGoodShit(acc_access_key)
+        cpm = Tresehshs(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
