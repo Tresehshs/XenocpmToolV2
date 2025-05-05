@@ -6,7 +6,7 @@ import urllib.parse
 
 __ENDPOINT_URL__: str = "https://xenov2.squareweb.app/api"
 
-class OfficialGoodShit:
+class Tresehshs:
     def __init__(self, access_key) -> None:
         self.auth_token = None
         self.access_key = access_key
