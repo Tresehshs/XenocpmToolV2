@@ -141,28 +141,36 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     while True:
         banner(console)
-        acc_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
-        acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
-        acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=False)
-        console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
-        cpm = Tresehshs(acc_access_key)
+        acc_email = prompt_valid_value(
+            "[bold][?] Account Email[/bold]", "Email", password=False
+        )
+        acc_password = prompt_valid_value(
+            "[bold][?] Account Password[/bold]", "Password", password=False
+        )
+        acc_access_key = prompt_valid_value(
+            "[bold][?] Access Key[/bold]", "Access Key", password=False
+        )
+        console.print("[bold red][%] Trying to Login[/bold red]: ", end=None)
+        cpm = OfficialGoodShit(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
-                print(Colorate.Horizontal(Colors.red_to_yellow, 'ACCOUNT NOT FOUND.'))
+                console.print("[bold red]ACCOUNT NOT FOUND (✘)[/bold red]")
                 sleep(2)
                 continue
             elif login_response == 101:
-                print(Colorate.Horizontal(Colors.red_to_yellow, 'WRONG PASSWORD.'))
+                console.print("[bold red]WRONG PASSWORD (✘)[/bold red]")
                 sleep(2)
                 continue
             elif login_response == 103:
-                print(Colorate.Horizontal(Colors.red_to_yellow, 'INVALID ACCESS KEY.'))
+                console.print("[bold red]INVALID ACCESS KEY (✘)[/bold red]")
                 sleep(2)
                 continue
             else:
-                print(Colorate.Horizontal(Colors.red_to_yellow, 'TRY AGAIN.'))
-                print(Colorate.Horizontal(Colors.red_to_yellow, '! Note: make sure you filled out the fields !.'))
+                console.print("[bold red]TRY AGAIN[/bold red]")
+                console.print(
+                    "[bold yellow] '! Note: make sure you filled out the fields ![/bold yellow]"
+                )
                 sleep(2)
                 continue
         else:
