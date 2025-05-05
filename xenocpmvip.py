@@ -1,3 +1,9 @@
+import platform
+import os
+import requests
+import subprocess
+import urllib.parse
+
 __ENDPOINT_URL__: str = "https://xenov2.squareweb.app/api"
 
 class Tresehshs:
