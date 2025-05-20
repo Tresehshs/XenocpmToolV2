@@ -163,10 +163,10 @@ if __name__ == "__main__":
             load_client_details()
             choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52"]
             class Col:
-                RED = "\033[91m"
-                YELLOW = "\033[93m"
-                WHITE = "\033[97m"
-                RESET = "\033[0m"
+                red = "\033[91m"
+                yellow = "\033[93m"
+                white = "\033[97m"
+                reset = "\033[0m"
 
             os.system("cls" if os.name == "nt" else "clear")
                 
@@ -225,7 +225,7 @@ if __name__ == "__main__":
                 ("{52}: Custom Hp (All Cars)          ", "7500"),
                 ("{00}: Exit                          ", ""),
             ]
-            
+
             half = (len(menu_price_list) + 1) // 2
             left_col = menu_price_list[:half]
             right_col = menu_price_list[half:]
@@ -234,13 +234,13 @@ if __name__ == "__main__":
             for i in range(half):
                 left = left_col[i]
                 right = right_col[i] if i < len(right_col) else ("", "")
-                left_str = f"{RED}→ {left[0]} {WHITE}{left[1]}"
-                right_str = f"{RED}→ {right[0]} {WHITE}{right[1]}"
-                print(f"{left_str:<40} {right_str}{RESET}")
+                left_str = f"{red}→ {left[0]} {white}{left[1]}"
+                right_str = f"{red}→ {right[0]} {white}{right[1]}"
+                print(f"{left_str:<40} {right_str}{reset}")
             
             console.print("[bold cyan]===============[bold cyan][ Xeno VIP Tool ][/bold cyan]===============[/bold cyan]")
             
-            print(f"\n{RED}[?] SELECT A SERVICE (00-52):{RESET} ", end="")
+            print(f"\n{red}[?] SELECT A SERVICE (00-52):{reset} ", end="")
             
             console.print("[bold cyan]===============[bold cyan][ Xeno VIP Tool ][/bold cyan]===============[/bold cyan]")
             
