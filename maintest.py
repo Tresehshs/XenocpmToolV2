@@ -163,10 +163,12 @@ if __name__ == "__main__":
             load_client_details()
             choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52"]
             class Col:
-                white = "\033[97m"
-                cyan = "\033[96m"
-                red = "\033[91m"
-                reset = "\033[0m"
+                RED = "\033[91m"
+                YELLOW = "\033[93m"
+                WHITE = "\033[97m"
+                RESET = "\033[0m"
+
+            os.system("cls" if os.name == "nt" else "clear")
                 
             menu_price_list = [
                 ("{01}: Increase Money                ", "1500"),
@@ -224,15 +226,22 @@ if __name__ == "__main__":
                 ("{00}: Exit                          ", ""),
             ]
             
-            for menu, price in menu_price_list:
-                code = menu[:5]  # e.g. {01}:
-                text = menu[5:]  # e.g. Increase Money
-                print(Col.cyan + code + Col.white + text + Col.red + price + Col.reset)
+            half = (len(menu_price_list) + 1) // 2
+            left_col = menu_price_list[:half]
+            right_col = menu_price_list[half:]
 
+# Print menu in two columns
+            print(f"{YELLOW}{'='*70}\n{'SERVICE MENU':^70}\n{'='*70}{RESET}")
+            for i in range(half):
+                left = left_col[i]
+                right = right_col[i] if i < len(right_col) else ("", "")
+                left_str = f"{RED}→ {left[0]} {WHITE}{left[1]}"
+                right_str = f"{RED}→ {right[0]} {WHITE}{right[1]}"
+                print(f"{left_str:<40} {right_str}{RESET}")
             
             console.print("[bold cyan]===============[bold cyan][ Xeno VIP Tool ][/bold cyan]===============[/bold cyan]")
             
-            service = IntPrompt.ask(f"[bold][?] Select a Service [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
+            print(f"\n{YELLOW}[?] SELECT A SERVICE (00-52):{RESET} ", end="")
             
             console.print("[bold cyan]===============[bold cyan][ Xeno VIP Tool ][/bold cyan]===============[/bold cyan]")
             
