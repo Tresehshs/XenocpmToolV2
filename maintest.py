@@ -231,7 +231,7 @@ if __name__ == "__main__":
             right_col = menu_price_list[half:]
 
 # Print menu in two columns
-            print(f"{YELLOW}{'='*70}\n{'SERVICE MENU':^70}\n{'='*70}{RESET}")
+            print(f"{RED}{'='*70}\n{'SERVICE MENU':^70}\n{'='*70}{RESET}")
             for i in range(half):
                 left = left_col[i]
                 right = right_col[i] if i < len(right_col) else ("", "")
@@ -241,7 +241,7 @@ if __name__ == "__main__":
             
             console.print("[bold cyan]===============[bold cyan][ Xeno VIP Tool ][/bold cyan]===============[/bold cyan]")
             
-            print(f"\n{YELLOW}[?] SELECT A SERVICE (00-52):{RESET} ", end="")
+            print(f"\n{RED}[?] SELECT A SERVICE (00-52):{RESET} ", end="")
             
             console.print("[bold cyan]===============[bold cyan][ Xeno VIP Tool ][/bold cyan]===============[/bold cyan]")
             
