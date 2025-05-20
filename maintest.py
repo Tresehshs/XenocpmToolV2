@@ -231,7 +231,6 @@ if __name__ == "__main__":
             right_col = menu_price_list[half:]
 
 # Print menu in two columns
-            print(f"{RED}{'='*70}\n{'SERVICE MENU':^70}\n{'='*70}{RESET}")
             for i in range(half):
                 left = left_col[i]
                 right = right_col[i] if i < len(right_col) else ("", "")
